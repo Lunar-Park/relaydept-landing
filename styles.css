@@ -79,53 +79,10 @@ body::before {
   outline-offset: 2px;
 }
 
-/* ─── Status Bar ─── */
-.status-bar {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 101;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.625rem 3rem;
-  background: rgba(13, 13, 13, 0.95);
-  border-bottom: 1px solid var(--border);
-  font-family: var(--mono);
-  font-size: 0.6875rem;
-  color: var(--text-dim);
-}
-
-.status-left, .status-right {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.status-item { display: flex; align-items: center; gap: 0.5rem; }
-
-.status-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--accent);
-}
-
-.status-divider { color: var(--border); }
-
 .status-mono {
   font-family: var(--mono);
   font-size: inherit;
 }
-
-.cursor-blink {
-  display: inline-block;
-  width: 8px;
-  height: 14px;
-  background: var(--text-dim);
-  animation: blink 1s step-end infinite;
-}
-
-@keyframes blink { 50% { opacity: 0; } }
 
 /* ─── Scroll reveal ─── */
 .reveal {
@@ -141,7 +98,7 @@ body::before {
 /* ─── Nav ─── */
 nav {
   position: fixed;
-  top: 32px; left: 0; right: 0;
+  top: 0; left: 0; right: 0;
   z-index: 100;
   padding: 1.25rem 3rem;
   display: flex;
@@ -502,6 +459,16 @@ body.no-scroll { overflow: hidden; }
   line-height: 1.7;
 }
 
+.scope-note {
+  margin-top: 1.5rem;
+  max-width: 900px;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--text-faint);
+  letter-spacing: 0.02em;
+  line-height: 1.7;
+}
+
 /* ─── Work (selected) ─── */
 .work {
   padding: 8rem 3rem;
@@ -555,6 +522,21 @@ body.no-scroll { overflow: hidden; }
   object-fit: cover;
   background: var(--surface-2);
   border: 1px solid var(--border);
+}
+
+.work-card h3 {
+  font-family: var(--display);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.work-meta {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--text-faint);
+  letter-spacing: 0.04em;
+  line-height: 1.6;
 }
 
 /* ─── Process ─── */
@@ -900,8 +882,7 @@ footer p {
 }
 
 @media (max-width: 900px) {
-  .status-bar { padding: 0.5rem 1.5rem; }
-  nav { top: 28px; padding: 1rem 1.5rem; }
+  nav { top: 0; padding: 1rem 1.5rem; }
   .nav-links { display: none; }
   .nav-toggle { display: flex; }
   .hero { padding: 8rem 1.5rem 5rem; }

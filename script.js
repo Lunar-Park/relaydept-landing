@@ -11,8 +11,8 @@
  * Behavior:
  *   - If endpoint is set  → POST JSON to endpoint, expect { ok: true } or 2xx.
  *   - If endpoint empty   → compose a mailto: link and open the user's mail client.
- *   - The form-mode UI element reflects which mode is active. This is shown to the
- *     user so fallback behavior is transparent.
+ *   - The form-mode UI element reflects which mode is active so fallback behavior
+ *     is transparent.
  *   - Honeypot field "_hp" silently rejects bot submissions in both modes.
  *   - Local validation only (required name + email), no third-party calls.
  *   - No secrets, tokens, or external API keys are bundled with the site.
@@ -26,18 +26,6 @@
     mailto: 'hello@relaydept.com',
     mailtoSubject: 'Relay Dept — inquiry'
   }, (window.RELAY_LANDING_CONFIG || {}));
-
-  /* ── Status bar date ── */
-  function initStatusBar() {
-    var el = document.getElementById('status-date');
-    if (!el) return;
-    var now = new Date();
-    var dateStr = now.toLocaleDateString('en-US', {
-      month: 'short', day: '2-digit', year: 'numeric'
-    }).toUpperCase();
-    el.textContent = dateStr;
-    el.setAttribute('aria-label', 'Current date: ' + dateStr);
-  }
 
   /* ── Scroll reveal ── */
   function initReveal() {
@@ -253,7 +241,6 @@
   }
 
   ready(function () {
-    initStatusBar();
     initReveal();
     initMobileNav();
     initContactForm();

@@ -2,8 +2,8 @@
 
 Self-contained static one-page landing site for Relay Dept.
 
-Positioned as a small production company: creative development, physical
-production, post, and creator-ready delivery. Dark, editorial /
+Positioned as a principal-led video production practice: creative
+development, physical production, post, and creator-ready asset packages. Dark, editorial /
 terminal-adjacent visual language. No build step, no runtime dependencies
 beyond Google Fonts (loaded via `<link>`). Drop-in GitHub-Pages compatible.
 
@@ -13,9 +13,9 @@ beyond Google Fonts (loaded via `<link>`). Drop-in GitHub-Pages compatible.
 
 | File           | Purpose                                                    |
 | -------------- | ---------------------------------------------------------- |
-| `index.html`   | One-page site: status bar, nav, hero, capabilities, work, process, contact, footer |
+| `index.html`   | One-page site: header, nav, hero, capabilities, work, process, contact, footer |
 | `styles.css`   | All styles. Dark theme, responsive at 1024 / 900 / 520 px |
-| `script.js`    | Vanilla JS: status bar, scroll reveal, mobile nav, contact form |
+| `script.js`    | Vanilla JS: scroll reveal, mobile nav, contact form |
 | `work-media.svg` | Neutral media surface used until work imagery is ready |
 | `favicon`      | Inline SVG data URL in `<link rel="icon">` (no extra file) |
 
@@ -55,7 +55,7 @@ The page is one continuous scroll with five sections:
 | -------------- | ---------------------------------------------------------------- |
 | Hero           | Production-company positioning and one-line description         |
 | Capabilities   | Creative development · Physical production · Post · Delivery    |
-| Work           | Media slots ready for selected work imagery                      |
+| Work           | Media slots with concise production-stage captions               |
 | Process        | Pre-production → Production → Post → Delivery                    |
 | Contact        | Accessible form with transparent mailto fallback                |
 
@@ -229,7 +229,7 @@ command -v gitleaks && gitleaks detect --no-banner --source . || echo "gitleaks 
 ```
 
 Run the local preview server (see above) and confirm:
-- Status bar shows current date.
+- Header and nav remain fixed at the top.
 - Nav links scroll smoothly to sections.
 - Mobile hamburger appears at ≤ 900 px.
 - Form: `mailto fallback` tag is visible; submit opens the mail
