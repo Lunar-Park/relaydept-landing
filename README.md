@@ -2,9 +2,10 @@
 
 Self-contained static one-page landing site for Relay Dept.
 
-Dark, editorial / terminal-adjacent visual language. No build step, no
-runtime dependencies beyond Google Fonts (loaded via `<link>`). Drop-in
-GitHub-Pages compatible.
+Positioned as a small production company: creative development, physical
+production, post, and creator-ready delivery. Dark, editorial /
+terminal-adjacent visual language. No build step, no runtime dependencies
+beyond Google Fonts (loaded via `<link>`). Drop-in GitHub-Pages compatible.
 
 ---
 
@@ -27,7 +28,7 @@ The site is plain static HTML. Any of the following work:
 
 ```bash
 # Python (simplest)
-cd /Users/selene/Lunar-Park/lunar-park-sites/relaydept-landing
+cd /Users/selene/Lunar-Park/relaydept-landing
 python3 -m http.server 8000
 # → http://localhost:8000
 
@@ -42,6 +43,24 @@ You can also open `index.html` directly in a browser (`file://`); the
 form's mailto fallback still works. The configured-endpoint path uses
 `fetch`, which works from `file://` in modern browsers but logs a CORS
 warning for non-relative endpoints — prefer `http://localhost`.
+
+---
+
+## Page structure
+
+The page is one continuous scroll with five sections:
+
+| Section        | Purpose                                                          |
+| -------------- | ---------------------------------------------------------------- |
+| Hero           | Production-company positioning and one-line description         |
+| Capabilities   | Creative development · Physical production · Post · Delivery    |
+| Selected work  | Placeholder engagement cards (no invented clients)              |
+| Process        | Pre-production → Production → Post → Delivery                    |
+| Contact        | Accessible form with transparent mailto fallback                |
+
+The process and capabilities sections use general production-company
+language. No clients, credits, outcomes, awards, or partnerships are
+invented or implied.
 
 ---
 
@@ -134,9 +153,9 @@ once a real endpoint is configured.
   labeled `Placeholder` with `Engagement · category TBD` and a disclaimer
   noting that no clients are invented or implied. Names, credits, and
   outcomes will only be added after explicit written permission.
-- **No legal claims.** Copy describes capabilities in general terms.
-  No fabricated production credits, awards, partnerships, or company
-  facts.
+- **No legal claims.** Copy describes capabilities in general production-
+  company terms. No fabricated production credits, awards, partnerships,
+  outcomes, or company facts.
 - **Honeypot only — no third-party bot service.** No Cloudflare
   Turnstile, reCAPTCHA, or equivalent third-party widget is loaded.
   This keeps the page fully static and dependency-free. Add a real
@@ -148,15 +167,15 @@ once a real endpoint is configured.
 
 When D gives the go-ahead:
 
-1. Move the `relaydept-landing` directory into a GitHub repository
-   (Lunar-Park / relaydept-landing, or similar — D's call).
-2. In repository settings → Pages:
-   - Source: **Deploy from a branch**
-   - Branch: `main` (or whichever), folder: `/ (root)`
-3. Custom domain (relaydept.com or similar) is configured in the same
-   Pages settings panel *after* the site is live, and an apex redirect
-   is added if needed. **Do not touch DNS until D approves.**
-4. Optional: enable HTTPS enforcement in Pages settings.
+1. The current standalone repo at
+   `/Users/selene/Lunar-Park/relaydept-landing` is already published from
+   `main` at `https://lunar-park.github.io/relaydept-landing/`. Any further
+   custom domain or DNS work is configured in Pages settings *after*
+   D approves, and an apex redirect is added if needed.
+2. Custom domain (relaydept.com or similar) is configured in the same
+   Pages settings panel *after* the site is live. **Do not touch DNS
+   until D approves.**
+3. Optional: enable HTTPS enforcement in Pages settings.
 
 The site uses only static files and absolute-path-independent links
 (anchor links are `#section`), so it works at any subpath
@@ -167,7 +186,7 @@ The site uses only static files and absolute-path-independent links
 ## Validating locally
 
 ```bash
-cd /Users/selene/Lunar-Park/lunar-park-sites/relaydept-landing
+cd /Users/selene/Lunar-Park/relaydept-landing
 
 # 1. Confirm directory layout
 ls -la
@@ -175,7 +194,7 @@ ls -la
 # 2. Confirm no unintended files / no node_modules / no .git
 find . -type d -name node_modules   # expect: nothing
 find . -type f -name "*.min.js"    # expect: nothing
-ls -la .git 2>/dev/null            # expect: no such file or directory
+ls -la .git 2>/dev/null            # note: this standalone repo DOES have .git (it is the published repo)
 
 # 3. JS syntax check
 node --check script.js && echo "script.js OK"
@@ -229,4 +248,5 @@ Run the local preview server (see above) and confirm:
   directory to four files.
 - No analytics, no third-party embeds, no A/B testing.
 - No service worker, no PWA manifest.
-- No DSPURY, no edits to `../relaydept/`, no DNS, no repo creation.
+- No DSPURY, no edits to `/Users/selene/Lunar-Park/lunar-park-sites/relaydept`,
+  no DNS, no repo creation, no invented clients or credits.
