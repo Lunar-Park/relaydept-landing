@@ -16,6 +16,7 @@ beyond Google Fonts (loaded via `<link>`). Drop-in GitHub-Pages compatible.
 | `index.html`   | One-page site: status bar, nav, hero, capabilities, work, process, contact, footer |
 | `styles.css`   | All styles. Dark theme, responsive at 1024 / 900 / 520 px |
 | `script.js`    | Vanilla JS: status bar, scroll reveal, mobile nav, contact form |
+| `work-media.svg` | Neutral media surface used until work imagery is ready |
 | `favicon`      | Inline SVG data URL in `<link rel="icon">` (no extra file) |
 
 No `node_modules`, no build artifacts, no external runtime JS.
@@ -54,7 +55,7 @@ The page is one continuous scroll with five sections:
 | -------------- | ---------------------------------------------------------------- |
 | Hero           | Production-company positioning and one-line description         |
 | Capabilities   | Creative development · Physical production · Post · Delivery    |
-| Selected work  | Placeholder engagement cards (no invented clients)              |
+| Work           | Media slots ready for selected work imagery                      |
 | Process        | Pre-production → Production → Post → Delivery                    |
 | Contact        | Accessible form with transparent mailto fallback                |
 
@@ -149,10 +150,8 @@ once a real endpoint is configured.
   (`fonts.googleapis.com`, `fonts.gstatic.com`). If those are blocked
   or unavailable, the site still works — system font stack falls back
   to `-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif`.
-- **No client data fabricated.** "Selected work" cards are explicitly
-  labeled `Placeholder` with `Engagement · category TBD` and a disclaimer
-  noting that no clients are invented or implied. Names, credits, and
-  outcomes will only be added after explicit written permission.
+- **No client data fabricated.** Work imagery and identifying details will
+  only be added after explicit written permission.
 - **No legal claims.** Copy describes capabilities in general production-
   company terms. No fabricated production credits, awards, partnerships,
   outcomes, or company facts.
