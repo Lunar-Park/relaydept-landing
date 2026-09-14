@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relay Dept — Autonomous AI Infrastructure</title>
+  <meta name="description" content="Relay Dept builds autonomous AI infrastructure — agents that remember, coordinate, and execute. Production-grade systems for teams that can't afford to fail.">
+  <meta name="theme-color" content="#0D0D0D">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Relay Dept — Autonomous AI Infrastructure">
+  <meta property="og:description" content="Production-grade autonomous AI infrastructure. Agents that remember, coordinate, and execute — without you in the loop.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Relay Dept">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Relay Dept — Autonomous AI Infrastructure">
+  <meta name="twitter:description" content="Production-grade autonomous AI infrastructure for teams that can't afford to fail.">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20fill%3D%22%230D0D0D%22%2F%3E%3Ctext%20x%3D%2216%22%20y%3D%2222%22%20text-anchor%3D%22middle%22%20font-family%3D%22monospace%22%20font-weight%3D%22700%22%20font-size%3D%2218%22%20fill%3D%22%23C23B4A%22%3ER%3C%2Ftext%3E%3C%2Fsvg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- Status Bar -->
+  <div class="status-bar" role="presentation">
+    <div class="status-left">
+      <span class="status-item">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span class="status-mono">relay.sys</span>
+      </span>
+      <span class="status-divider" aria-hidden="true">/</span>
+      <span class="status-mono">v1.0.0</span>
+    </div>
+    <div class="status-right">
+      <span class="status-mono" id="status-date" aria-label="Current date"></span>
+      <span class="status-divider" aria-hidden="true">/</span>
+      <span class="cursor-blink" aria-hidden="true"></span>
+    </div>
+  </div>
+
+  <div class="page-wrap">
+
+    <!-- Nav -->
+    <nav aria-label="Primary">
+      <a href="#" class="logo" aria-label="Relay Dept home">
+        <span class="logo-text">Relay</span><span class="logo-accent">[_]</span><span class="logo-text"> Dept</span>
+      </a>
+      <div class="nav-right">
+        <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+        </button>
+        <ul class="nav-links" role="list">
+          <li><a href="#capabilities">Capabilities</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation menu" aria-hidden="true">
+      <p class="menu-eyebrow">// Navigate</p>
+      <a href="#capabilities" class="mobile-link">Capabilities</a>
+      <a href="#work" class="mobile-link">Work</a>
+      <a href="#process" class="mobile-link">Process</a>
+      <a href="#contact" class="mobile-link">Contact</a>
+    </div>
+
+    <main id="main">
+
+      <!-- Hero -->
+      <section class="hero">
+        <div class="hero-inner">
+          <span class="hero-corner" aria-hidden="true">relay.sys.v1.0</span>
+          <pre class="hero-ascii" aria-hidden="true">                                       .,;,.
+                                .';cdkXNWWWWXd'
+                           .',:xxdxOxddOKKOO0XKOo'.
+                        .';;;coclx0kdddx0K0OO0xloo,;'
+                      .;:clokOkkxxOkoooddxdxxkkOO0d:,;'
+                    .lxkkkxxdcc;;;;cc::ccc:::;;:lOooxdoc
+                  'l0Oxdoc:l:;,,,,,,,;cokOdlc:::c;',,:ldx'.
+              .;ldOkddl:;,,:c;;,,,,,;;:lc;;,;,''''''.',:x:;;.
+            .lxoldOdl;;,,,,,c:;,,,;;::::;''''''''.''''',lc',:;
+           cdoc::Odc;,,,,,,,,cc:;;;cllll;,,'',,''''.''',l;'',;:.
+         .xocc::o0l:;;,,,,,,,,;ll::clllc;'''''''''''''':c'..'',:
+        :xlc::::dk:;;;,,,,,,,,,,;cllcldlo:,,,,'''''',;::,'..''',,
+       odlcc:;;:ox:;;;,,,,,,,;,;,,;coxOOOkxdl:;;:;;;,''.''''''':.
+      ddcc::;;;:ckc:;;;;,,,,,,,,;;;;::::cl:;;;;,,'..........'''';.
+     cxlc::::;;;:do::;;;;;,,,;;;;;;;;;;:,''''''.'............'',;'
+    .klcc:::;;,;;cko::::;;,;;;::;;:;;;:'''''''...............'',;'
+    odccc::;;;;;;;cxoc::;;;;;:::;;;:::,''''''......'.........':ld.
+   .Oolc:::;;;;;;;;cdxl:;;;;:clc:;;:cc''''''''....'.........':dOk,'.
+   ;klcc:;;;;;;;,,;;;cdo::;;:clllc:ccc,''''''''..'.........,;lOXx:;,.
+   cxlc::::;;;;;;,,,,,;ldoc:::coddololl,'''''''''''''''''',:oOXOdlc;,,,.
+   :xlc:;;;;;;,,,,,,,,,,;:oddlccokK0Okddc,,;:cooolc:;,,;;;coOKxl;;;:;,,,'
+   :xlc:;;;;;,;,,,,,,,,,,,,;cdxxdoxNWXOdxddkkOOOOkdl:;;,;cxOxl;'...';;,;,'.
+   .klc::;;;;,,,,,,,,,,,,,,,,;cld0NWWNNX00XXNNNX0dc::ldkOOxc,''.....',,;;;,
+    xoc::;;;,,,,,,,,,,,,,,,,,;:cxKXK00KWMWX00OOkxxkkxdl:;;;;'........';,;:;'
+    :dlc:;;;;,,,'',,',,,,,,,;;cokOOOOKNNx;''''''',;,,,''''''..........,;;:;,.
+     doc:;;;,,,,'''''''',,,;;coxkkk0KNk,........',''''................';;;:'.
+     .xoc:;;;,,,,,''''''',,;:lodxk0XXc..........'...'.................';;;:'.
+      .xlc:;;;,,,,,,,,;;:cclodddxOXX:..................................,:;:;,
+       .dl:;;;,,,,,,,,,;;:clooddOXNo..........'........................';:;;'
+        .dlc;;;,,,,,,,,,;:cloodkKNK,.........'.........................';::.
+          :dc;;,,,,,,,,;:cllodkOKN0'...................................,;::,
+           .lo:;::::::cccclodkOk0NK;...................................;:c:.
+             .odc:::::cccloodkxkOXXl..................................,:oc.
+               .colcclooollldxdxk0N0,................................':do.
+                 .:xkxddlcclxoodxdONK,..............................,lkc
+                    .:d0OdoxOxoldlokNNd'..........................':kd.
+                        ,oO0KOdldoookXNKo'......................':xd.
+                           'dK0xoxdxdk0XNXkl;'...............,cxd:
+                              ,o0KXOxxkO0XXXXKOxoc:;;;;cldkOkd;.
+                                  .:lodk0KKKKXXXXXXXNX0xo:.
+                                          ..........</pre>
+
+          <p class="hero-eyebrow">Autonomous AI Infrastructure</p>
+          <h1>We build systems<br>that <em>think for you</em></h1>
+          <p class="hero-sub">Production-grade autonomous infrastructure for teams that can't afford to fail. Agents that remember, coordinate, and execute — without you in the loop.</p>
+          <div class="hero-divider"><span>//</span> <span class="status-mono">operational since 2026</span></div>
+        </div>
+      </section>
+
+      <!-- Capabilities -->
+      <section class="capabilities reveal" id="capabilities" aria-labelledby="capabilities-label">
+        <div class="section-inner">
+          <p class="section-label" id="capabilities-label">Capabilities</p>
+
+          <div class="services-grid">
+            <article class="service-card">
+              <p class="service-num">01</p>
+              <h3>Agent Systems</h3>
+              <p>Custom autonomous agents built around your workflows. Not chatbots — intelligent systems that handle real work across every platform you use.</p>
+            </article>
+            <article class="service-card">
+              <p class="service-num">02</p>
+              <h3>AI Infrastructure</h3>
+              <p>The architecture behind reliable AI. Monitoring, orchestration, memory, and failover — so your systems don't break when it matters.</p>
+            </article>
+            <article class="service-card">
+              <p class="service-num">03</p>
+              <h3>Workflow Automation</h3>
+              <p>End-to-end pipelines that connect your tools, data, and people. From intake to delivery, the work happens without you.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Selected Work (placeholder) -->
+      <section class="work reveal" id="work" aria-labelledby="work-label">
+        <div class="section-inner">
+          <p class="section-label" id="work-label">Selected work</p>
+          <p class="section-intro">A small sample of recent engagements. Detailed case studies and credits will be published as engagements clear review.</p>
+
+          <div class="work-grid">
+            <article class="work-card" aria-label="Engagement placeholder 01">
+              <header class="work-card-head">
+                <span class="work-num">01</span>
+                <span class="work-tag">Placeholder</span>
+              </header>
+              <h3>Internal operations agent</h3>
+              <p class="work-meta">Engagement · category TBD</p>
+              <p>Multi-agent system for a small operations team to triage inbound requests, route work, and keep state across tools. Engagement details pending client approval.</p>
+            </article>
+
+            <article class="work-card" aria-label="Engagement placeholder 02">
+              <header class="work-card-head">
+                <span class="work-num">02</span>
+                <span class="work-tag">Placeholder</span>
+              </header>
+              <h3>Content pipeline orchestration</h3>
+              <p class="work-meta">Engagement · category TBD</p>
+              <p>Long-running pipeline that coordinates research, drafting, and review across multiple models and humans. Engagement details pending client approval.</p>
+            </article>
+
+            <article class="work-card" aria-label="Engagement placeholder 03">
+              <header class="work-card-head">
+                <span class="work-num">03</span>
+                <span class="work-tag">Placeholder</span>
+              </header>
+              <h3>Memory &amp; state layer</h3>
+              <p class="work-meta">Engagement · category TBD</p>
+              <p>Persistence and retrieval layer that gives agents durable context across sessions and tools. Engagement details pending client approval.</p>
+            </article>
+          </div>
+
+          <p class="work-disclaimer">Client names, credits, and outcomes will be added here only after explicit written permission. No clients are invented or implied.</p>
+        </div>
+      </section>
+
+      <!-- Process -->
+      <section class="process reveal" id="process" aria-labelledby="process-label">
+        <div class="section-inner">
+          <p class="section-label" id="process-label">How we work</p>
+
+          <ol class="how-timeline" role="list">
+            <li class="how-step reveal">
+              <p class="how-step-num">01 — Discovery</p>
+              <h3>Discovery</h3>
+              <p>We sit down, listen to what's broken or slow, and figure out where AI actually creates leverage for your operation.</p>
+            </li>
+            <li class="how-step reveal">
+              <p class="how-step-num">02 — Design</p>
+              <h3>Design</h3>
+              <p>Every system is built from scratch. No templates, no shortcuts — architecture designed around your specific needs and constraints.</p>
+            </li>
+            <li class="how-step reveal">
+              <p class="how-step-num">03 — Deploy</p>
+              <h3>Deploy</h3>
+              <p>We ship with monitoring, logging, and failover from day one. Your agents run live, with visibility into everything they do.</p>
+            </li>
+            <li class="how-step reveal">
+              <p class="how-step-num">04 — Evolve</p>
+              <h3>Evolve</h3>
+              <p>AI systems need tending. We maintain, update, and improve as your needs change — your infrastructure grows with you.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="contact reveal" id="contact" aria-labelledby="contact-label">
+        <div class="section-inner contact-inner">
+          <div class="contact-intro">
+            <p class="section-label" id="contact-label">Contact</p>
+            <h2>Let's build<br><em>something real</em></h2>
+            <p class="contact-sub">Tell us what you're working on. We'll figure out if AI operations can give you the edge.</p>
+            <p class="contact-email" aria-label="Direct email">
+              <span class="status-mono">//</span>
+              <a href="mailto:hello@relaydept.com">hello@relaydept.com</a>
+            </p>
+          </div>
+
+          <form class="contact-form" id="contact-form" novalidate aria-describedby="contact-form-mode">
+            <p class="form-mode" id="contact-form-mode" data-mode="mailto" aria-live="polite">
+              <span class="form-mode-label">Form mode</span>
+              <span class="form-mode-value">
+                <span class="form-mode-tag" data-role="mode-tag">mailto fallback</span>
+                <span class="form-mode-note" data-role="mode-note">No submission endpoint configured — submit opens your mail client.</span>
+              </span>
+            </p>
+
+            <!-- Honeypot: real users never see or fill this -->
+            <input type="text" name="_hp" tabindex="-1" autocomplete="off" class="hp-field" aria-hidden="true">
+
+            <div class="form-row">
+              <label class="form-field">
+                <span class="form-label">Name</span>
+                <input type="text" name="name" required autocomplete="name">
+              </label>
+              <label class="form-field">
+                <span class="form-label">Email</span>
+                <input type="email" name="email" required autocomplete="email">
+              </label>
+            </div>
+
+            <label class="form-field">
+              <span class="form-label">What are you working on?</span>
+              <input type="text" name="project" autocomplete="off">
+            </label>
+
+            <label class="form-field">
+              <span class="form-label">Tell us more <span class="form-optional">(optional)</span></span>
+              <textarea name="message" rows="4"></textarea>
+            </label>
+
+            <button type="submit" class="form-submit" id="contact-submit">Send →</button>
+            <p class="form-status" id="contact-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p class="status-mono">&copy; 2026 Relay Dept — All rights reserved</p>
+      <div class="footer-links">
+        <a href="mailto:hello@relaydept.com">Email</a>
+        <a href="#capabilities">Capabilities</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </footer>
+
+  </div><!-- /page-wrap -->
+
+  <script src="script.js" defer></script>
+</body>
+</html>
